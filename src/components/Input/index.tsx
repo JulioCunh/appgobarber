@@ -43,7 +43,7 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
   const handleInputBlur = useCallback(() => {
     setIsFocused(false);
 
-    setIsFocused(!!inputElementRef.current.value);
+    setIsFilled(!!inputValueRef.current.value);
   }, []);
 
   useImperativeHandle(ref, () => ({
@@ -69,14 +69,14 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
   }, [fieldName, registerField]);
 
   return (
-    <Container isFocused={isFocused}>
+    <Container isFocused={isFocused} isError={!!error}>
       <Icon
         name={icon}
         size={20}
         color={isFocused || isFilled ? '#ff9000' : '#666360'}
       />
-
       <TextInput
+        ref={inputElementRef} // precisa adicionar isso
         keyboardAppearance="dark"
         placeholderTextColor="#666360"
         defaultValue={defaultValue}
@@ -92,5 +92,3 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
 };
 
 export default forwardRef(Input);
-
-// 05:28
