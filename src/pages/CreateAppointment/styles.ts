@@ -65,7 +65,7 @@ export const ProviderAvatar = styled.Image`
   border-radius: 16px;
 `;
 
-export const ProviderName = styled.Text`
+export const ProviderName = styled.Text<ProviderNameProps>`
   margin-left: 8px;
   font-family: 'RobotoSlab-Medium';
   font-size: 16px;
