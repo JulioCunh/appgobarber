@@ -129,7 +129,7 @@ const Profile: React.FC = () => {
         title: 'Selecione um avatar',
         cancelButtonTitle: 'Cancelar',
         takePhotoButtonTitle: 'Usar câmara',
-        // chooseFromLibraryButtonTitle: 'Escolha da galeria',
+        chooseFromLibraryButtonTitle: 'Escolha da galeria',
       },
       response => {
         if (response.didCancel) {
